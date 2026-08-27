@@ -54,13 +54,20 @@
                 </svg>
                 <div class="preloader-heading">
                     <div class="load-text">
-                        <span>L</span>
-                        <span>o</span>
+                        <span>T</span>
+                        <span>r</span>
+                        <span>e</span>
                         <span>a</span>
-                        <span>d</span>
-                        <span>i</span>
+                        <span>s</span>
+                        <span>u</span>
+                        <span>r</span>
+                        <span>e</span>
+                        <span>&nbsp;</span>
+                        <span>A</span>
+                        <span>k</span>
+                        <span>p</span>
+                        <span>a</span>
                         <span>n</span>
-                        <span>g</span>
                     </div>
                 </div>
             </div>
@@ -133,40 +140,89 @@
             </div>
             <div class="offcanvas__overlay"></div>
 
-            <!-- Header Section Start -->
+                        <!-- Header Section Start -->
+            <style>
+                #header-sticky {
+                    background: #0D0D0D !important;
+                    border-bottom: 1px solid rgba(147,242,3,0.12);
+                    transition: all 0.3s ease;
+                }
+                #header-sticky.sticky {
+                    background: rgba(13,13,13,0.97) !important;
+                    backdrop-filter: blur(20px);
+                    -webkit-backdrop-filter: blur(20px);
+                    border-bottom: 1px solid rgba(147,242,3,0.2);
+                    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+                }
+                .custom-nav-link {
+                    color: #aaa !important;
+                    font-size: 0.9rem !important;
+                    font-weight: 500 !important;
+                    text-transform: uppercase !important;
+                    letter-spacing: 1px !important;
+                    text-decoration: none;
+                    padding: 6px 0 !important;
+                    border-bottom: 2px solid transparent;
+                    transition: color 0.25s ease, border-color 0.25s ease;
+                    display: inline-block;
+                }
+                .custom-nav-link:hover,
+                .custom-nav-link.active {
+                    color: #93F203 !important;
+                    border-bottom-color: #93F203;
+                }
+                .nav-email-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: transparent;
+                    border: 1.5px solid rgba(147,242,3,0.4);
+                    color: #93F203;
+                    font-size: 0.82rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.8px;
+                    padding: 10px 22px;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: all 0.25s ease;
+                }
+                .nav-email-btn:hover {
+                    background: #93F203;
+                    color: #0D0D0D;
+                    border-color: #93F203;
+                }
+                .header-1 .main-menu ul li a.circle-menu-box {
+                    background: none !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                }
+            </style>
             <header id="header-sticky" class="header-1">
                 <div class="container">
                     <div class="mega-menu-wrapper">
-                        <div class="header-main">
+                        <div class="header-main" style="padding: 22px 0;">
                             <a href="/" class="logo">
-                                <img src="assets/img/logo/black-logo.png" alt="img">
+                                <img src="assets/img/logo/white-logo.png" alt="Treasure Akpan" style="height: 38px; width: auto;">
                             </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
-                                                                        <nav id="mobile-menu">
-                                        <ul>
-                                            <li class="active">
-                                                <a class="circle-menu-box" href="/">Home</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="project">Portfolio</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="service">Services</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="contact">Contact</a>
-                                            </li>
+                                    <nav id="mobile-menu">
+                                        <ul style="display: flex; align-items: center; gap: 40px; list-style: none; margin: 0; padding: 0;">
+                                            <li><a class="custom-nav-link" href="/">Home</a></li>
+                                            <li><a class="custom-nav-link" href="project">Portfolio</a></li>
+                                            <li><a class="custom-nav-link active" href="service">Services</a></li>
+                                            <li><a class="custom-nav-link" href="contact">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="header-right d-flex justify-content-end align-items-center">
-                               
-                                <a href="mailto:treasureemicah@gmail.com" class="theme-btn">
-                                  treasureemicah@gmail.com
+                            <div class="header-right d-flex justify-content-end align-items-center gap-3">
+                                <a href="mailto:treasureemicah@gmail.com" class="nav-email-btn d-none d-lg-inline-flex">
+                                    <i class="fas fa-envelope" style="font-size: 12px;"></i>
+                                    treasureemicah@gmail.com
                                 </a>
-                                <div class="header__hamburger d-xl-none  my-auto">
+                                <div class="header__hamburger d-xl-none my-auto">
                                     <div class="sidebar__toggle">
                                        <span></span>
                                        <span></span>

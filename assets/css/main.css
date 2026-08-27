@@ -27,7 +27,7 @@ Version: 1.0.0
   --black: #000;
   --white: #fff;
   --theme: #93F203;
-  --theme2: #6805F1;
+  --theme2: #93F203;
   --header: #0D0D0D;
   --text: #373636;
   --border: #FCFCFC;
@@ -3708,7 +3708,7 @@ span {
 }
 
 .tech-stack-items {
-  border: 1px solid rgb(29, 29, 29);
+  border: 1px solid rgba(206, 206, 206, 0.71);
   border-radius: 8px;
   padding: 40px;
 }
