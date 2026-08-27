@@ -134,39 +134,89 @@
             <div class="offcanvas__overlay"></div>
 
             <!-- Header Section Start -->
+            <style>
+                #header-sticky {
+                    background: #0D0D0D !important;
+                    border-bottom: 1px solid rgba(147,242,3,0.12);
+                    transition: all 0.3s ease;
+                }
+                #header-sticky.sticky {
+                    background: rgba(13,13,13,0.97) !important;
+                    backdrop-filter: blur(20px);
+                    -webkit-backdrop-filter: blur(20px);
+                    border-bottom: 1px solid rgba(147,242,3,0.2);
+                    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+                }
+                .custom-nav-link {
+                    color: #aaa !important;
+                    font-size: 0.9rem !important;
+                    font-weight: 500 !important;
+                    text-transform: uppercase !important;
+                    letter-spacing: 1px !important;
+                    text-decoration: none;
+                    padding: 6px 0 !important;
+                    border-bottom: 2px solid transparent;
+                    transition: color 0.25s ease, border-color 0.25s ease;
+                    display: inline-block;
+                }
+                .custom-nav-link:hover,
+                .custom-nav-link.active {
+                    color: #93F203 !important;
+                    border-bottom-color: #93F203;
+                }
+                .nav-email-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: transparent;
+                    border: 1.5px solid rgba(147,242,3,0.4);
+                    color: #93F203;
+                    font-size: 0.82rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.8px;
+                    padding: 10px 22px;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: all 0.25s ease;
+                }
+                .nav-email-btn:hover {
+                    background: #93F203;
+                    color: #0D0D0D;
+                    border-color: #93F203;
+                }
+                /* Override circle-menu-box default */
+                .header-1 .main-menu ul li a.circle-menu-box {
+                    background: none !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                }
+            </style>
             <header id="header-sticky" class="header-1">
                 <div class="container">
                     <div class="mega-menu-wrapper">
-                        <div class="header-main">
+                        <div class="header-main" style="padding: 22px 0;">
                             <a href="/" class="logo">
-                                <img src="assets/img/logo/black-logo.png" alt="img">
+                                <img src="assets/img/logo/white-logo.png" alt="Treasure Akpan" style="height: 38px; width: auto;">
                             </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
-                                                                        <nav id="mobile-menu">
-                                        <ul>
-                                            <li class="active">
-                                                <a class="circle-menu-box" href="/">Home</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="project">Portfolio</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="service">Services</a>
-                                            </li>
-                                            <li>
-                                                <a class="circle-menu-box" href="contact">Contact</a>
-                                            </li>
+                                    <nav id="mobile-menu">
+                                        <ul style="display: flex; align-items: center; gap: 40px; list-style: none; margin: 0; padding: 0;">
+                                            <li><a class="custom-nav-link active" href="/">Home</a></li>
+                                            <li><a class="custom-nav-link" href="project">Portfolio</a></li>
+                                            <li><a class="custom-nav-link" href="service">Services</a></li>
+                                            <li><a class="custom-nav-link" href="contact">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="header-right d-flex justify-content-end align-items-center">
-                               
-                                <a href="mailto:treasureemicah@gmail.com" class="theme-btn">
-                                  treasureemicah@gmail.com
+                            <div class="header-right d-flex justify-content-end align-items-center gap-3">
+                                <a href="mailto:treasureemicah@gmail.com" class="nav-email-btn d-none d-lg-inline-flex">
+                                    <i class="fas fa-envelope" style="font-size: 12px;"></i>
+                                    treasureemicah@gmail.com
                                 </a>
-                                <div class="header__hamburger d-xl-none  my-auto">
+                                <div class="header__hamburger d-xl-none my-auto">
                                     <div class="sidebar__toggle">
                                        <span></span>
                                        <span></span>
@@ -189,256 +239,421 @@
                     </div>
                     
 
-                    <!-- Breadcrumb Section Start -->
-                    <section class="breadcrumb-wrapper bg-cover">
-                    </section>
+                    <!-- Hero Section Start -->
+                    <section id="hero" style="
+                        min-height: 100vh;
+                        display: flex;
+                        align-items: center;
+                        background: #0D0D0D;
+                        position: relative;
+                        overflow: hidden;
+                        padding: 140px 0 80px;
+                    ">
+                        <!-- Subtle background grid -->
+                        <div style="
+                            position: absolute;
+                            inset: 0;
+                            background-image: linear-gradient(rgba(147,242,3,0.04) 1px, transparent 1px),
+                                              linear-gradient(90deg, rgba(147,242,3,0.04) 1px, transparent 1px);
+                            background-size: 60px 60px;
+                            pointer-events: none;
+                        "></div>
+                        <!-- Glow orb -->
+                        <div style="
+                            position: absolute;
+                            top: -150px;
+                            right: -150px;
+                            width: 600px;
+                            height: 600px;
+                            background: radial-gradient(circle, rgba(147,242,3,0.1) 0%, transparent 70%);
+                            pointer-events: none;
+                        "></div>
+                        <div style="
+                            position: absolute;
+                            bottom: -100px;
+                            left: -100px;
+                            width: 400px;
+                            height: 400px;
+                            background: radial-gradient(circle, rgba(147,242,3,0.05) 0%, transparent 70%);
+                            pointer-events: none;
+                        "></div>
 
-                     <!-- About Section Start -->
-                    <section class="about-section fix" style="margin-top:120px">
-                        <div class="container">
-                            <div class="about-wrapper-inner section-bg">
-                                <div class="row align-items-center">
-                                    <div class="col-xl-7">
-                                        <div class="about-content">
-                                            <span class="work-text wow fadeInUp">Available for work</span>
-                                            <div class="section-title mb-0 split-title">
-                                                <h2 class="style-3 text-white">Hi, I'm Treasure Akpan <br> Social Media Manager</h2>
-                                            </div>
-                                            <p class="about-text wow fadeInUp" data-wow-delay=".2s">
-                                                Welcome to my portfolio! I'm a passionate Social Media Manager with a proven track record of building brand communities, crafting high-converting content, and driving real business growth through strategic digital marketing.
-                                            </p>
-                                            <div class="about-btn-area wow fadeInUp" data-wow-delay=".4s">
-                                                <a href="https://wa.me/2349138879884" class="theme-btn">
-                                                Hire Me
-                                                </a>
-                                                <a href="Treasure-Akpan-CV.pdf" class="social-icon" download>
-                                                    Download CV
-                                                </a>
-                                            </div>
+                        <div class="container" style="position: relative; z-index: 2;">
+                            <div class="row align-items-center g-5">
+                                <!-- Left Content -->
+                                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+
+                                    <h1 style="font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px;">
+                                        I Help Brands <br>
+                                        <span style="color: #93F203;">Grow &amp; Convert</span><br>
+                                        on Social Media
+                                    </h1>
+
+                                    <p style="font-size: 1.15rem; color: #aaaaaa; line-height: 1.7; margin-bottom: 40px; max-width: 480px;">
+                                        Social Media Strategist &amp; Manager crafting scroll-stopping content, community-building campaigns, and data-driven results for brands that mean business.
+                                    </p>
+
+                                    <!-- CTA Buttons -->
+                                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 56px;">
+                                        <a href="https://wa.me/2349138879884" class="theme-btn">
+                                            Hire Me
+                                        </a>
+                                        <a href="Treasure-Akpan-CV.pdf" download style="
+                                            display: inline-flex;
+                                            align-items: center;
+                                            gap: 10px;
+                                            color: #93F203;
+                                            font-weight: 600;
+                                            font-size: 0.9rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 1px;
+                                            text-decoration: none;
+                                            height: 65px;
+                                            padding: 0 40px;
+                                            border: 1.5px solid rgba(147,242,3,0.35);
+                                            border-radius: 35px;
+                                            transition: all 0.3s ease;
+                                        " onmouseover="this.style.background='rgba(147,242,3,0.08)'; this.style.borderColor='#93F203';"
+                                           onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(147,242,3,0.35)';">
+                                            <i class="fas fa-download" style="font-size: 0.85rem;"></i>
+                                            Download CV
+                                        </a>
+                                    </div>
+
+                                    <!-- Stats row -->
+                                    <div style="display: flex; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);">
+                                        <div>
+                                            <div style="font-size: 2rem; font-weight: 800; color: #fff; line-height: 1;">3+</div>
+                                            <div style="font-size: 0.85rem; color: #888; margin-top: 4px; font-weight: 500;">Years Experience</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 2rem; font-weight: 800; color: #fff; line-height: 1;">10+</div>
+                                            <div style="font-size: 0.85rem; color: #888; margin-top: 4px; font-weight: 500;">Brands Managed</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 2rem; font-weight: 800; color: #fff; line-height: 1;">40%</div>
+                                            <div style="font-size: 0.85rem; color: #888; margin-top: 4px; font-weight: 500;">Avg. Engagement Lift</div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-5 col-lg-5 mt-4 mt-xl-0 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="about-img">
-                                            <img src="assets/img/inner/about/about-01.png" alt="img">
+                                </div>
+
+                                <!-- Right — Image -->
+                                <div class="col-lg-6 text-center wow fadeInRight" data-wow-delay=".4s">
+                                    <div style="position: relative; display: inline-block;">
+                                        <!-- Ring decoration -->
+                                        <div style="
+                                            position: absolute;
+                                            inset: -20px;
+                                            border: 2px dashed rgba(147,242,3,0.2);
+                                            border-radius: 50% 40% 50% 40%;
+                                            animation: spin 20s linear infinite;
+                                            pointer-events: none;
+                                        "></div>
+                                        <!-- Image container -->
+                                        <div style="
+                                            width: 420px;
+                                            max-width: 100%;
+                                            height: 500px;
+                                            border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+                                            overflow: hidden;
+                                            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+                                            border: 2px solid rgba(147,242,3,0.2);
+                                            margin: 0 auto;
+                                        ">
+                                            <img src="assets/img/inner/about/about-01.png" alt="Treasure Akpan – Social Media Manager" style="
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                                object-position: top center;
+                                            ">
+                                        </div>
+                                        <!-- Floating tag -->
+                                        <div style="
+                                            position: absolute;
+                                            bottom: 40px;
+                                            left: -30px;
+                                            background: #0D0D0D;
+                                            border: 1px solid rgba(147,242,3,0.25);
+                                            border-radius: 16px;
+                                            padding: 14px 20px;
+                                            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 12px;
+                                            white-space: nowrap;
+                                        ">
+                                            <div style="width: 40px; height: 40px; background: #93F203; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fas fa-chart-line" style="color: #0D0D0D; font-size: 18px;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-size: 0.75rem; color: #888; font-weight: 500;">Avg. Reach Growth</div>
+                                                <div style="font-size: 1.1rem; color: #fff; font-weight: 800;">+120% ROI</div>
+                                            </div>
+                                        </div>
+                                        <!-- Floating social badge -->
+                                        <div style="
+                                            position: absolute;
+                                            top: 40px;
+                                            right: -20px;
+                                            background: #111;
+                                            border: 1px solid rgba(147,242,3,0.25);
+                                            border-radius: 14px;
+                                            padding: 12px 16px;
+                                            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+                                            display: flex;
+                                            gap: 14px;
+                                            align-items: center;
+                                        ">
+                                            <i class="fab fa-instagram" style="color: #93F203; font-size: 20px;"></i>
+                                            <i class="fab fa-facebook" style="color: #93F203; font-size: 20px;"></i>
+                                            <i class="fab fa-linkedin" style="color: #93F203; font-size: 20px;"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+
+                    <style>
+                        @keyframes pulse {
+                            0%, 100% { opacity: 1; transform: scale(1); }
+                            50% { opacity: 0.5; transform: scale(1.4); }
+                        }
+                        @keyframes spin {
+                            from { transform: rotate(0deg); }
+                            to { transform: rotate(360deg); }
+                        }
+                    </style>
 
                     <!-- Counter Feature Section Start -->
                     <section class="counter-feature-section section-padding fix pt-0">
                     </section>
 
-                    <!-- Work Positions Section Start -->
-                    <section class="work-positions fix">
+                    <!-- Experience Section Start -->
+                    <section style="background: #f8f9f6; padding: 100px 0;">
                         <div class="container">
-                            <div class="section-title text-center text-xl-start split-title">
-                                <h2 class="style-3">Real Results for Real Brands — <br> Social Media Since 2022</h2>
-                            </div>
-                            <div class="work-positions-items active">
-                                <span class="year">Oct 2025 – Present</span>
-                                <h3 class="title">
-                                   M25 Travel &amp; Tour Agency
-                                </h3>
-                                <div class="content">
-                                    <h4 class="title-2">
-                                       Customer Service, Sales &amp; Social Media — UK (Remote)
-                                    </h4>
-                                    <ul>
-                                        <li>
-                                            • Handled daily inbound and outbound calls for a UK travel agency, converting qualified leads into confirmed bookings and managing reservation changes and refund requests.
-                                        </li>
-                                        <li>
-                                            • Also managed the company's social media and content calendars, driving community engagement alongside core call-centre duties.
-                                        </li>
-                                    </ul>
+                            <!-- Header -->
+                            <div class="row align-items-end mb-5 pb-2">
+                                <div class="col-lg-7">
+                                    <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #93F203; margin-bottom: 12px; background: rgba(147,242,3,0.12); display: inline-block; padding: 6px 16px; border-radius: 4px;">Work Experience</p>
+                                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #0D0D0D; line-height: 1.15; margin: 0;">Real Results for Real Brands —<br><span style="color: #0D0D0D; opacity: 0.45;">Social Media Since 2022</span></h2>
+                                </div>
+                                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                                    <a href="project" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0D0D0D; text-decoration: none; border-bottom: 2px solid #93F203; padding-bottom: 4px;">View Portfolio &rarr;</a>
                                 </div>
                             </div>
-                            <div class="work-positions-items">
-                                <span class="year">2025</span>
-                                <h3 class="title">
-                                    Genova Transact
-                                </h3>
-                                <div class="content">
-                                    <h4 class="title-2">
-                                        Head of Marketing — Lagos, Nigeria
-                                    </h4>
-                                    <ul>
-                                        <li>
-                                            • Led social media and overall digital marketing strategy across platforms, planning and executing growth-focused campaigns.
-                                        </li>
-                                        <li>
-                                            • Increased audience engagement and brand awareness through proactive community interaction and content testing.
-                                        </li>
-                                    </ul>
+
+                            <!-- Timeline -->
+                            <div style="position: relative; padding-left: 0;">
+
+                                <!-- Vertical lime line on large screens -->
+                                <div class="d-none d-lg-block" style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #93F203, rgba(147,242,3,0.1)); transform: translateX(-50%);"></div>
+
+                                <!-- Entry 1 -->
+                                <div class="row align-items-center mb-5 pb-2 wow fadeInUp" data-wow-delay=".1s" style="position: relative;">
+                                    <div class="col-lg-5 text-lg-end pe-lg-5 order-2 order-lg-1">
+                                        <div style="background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); border: 1px solid #eee;">
+                                            <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #93F203;">Oct 2025 – Present</span>
+                                            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0D0D0D; margin: 10px 0 6px;">M25 Travel &amp; Tour Agency</h3>
+                                            <p style="font-size: 0.9rem; font-weight: 600; color: #666; margin-bottom: 16px;">Customer Service, Sales &amp; Social Media — UK (Remote)</p>
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li style="display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Handled daily inbound and outbound calls, converting qualified leads into confirmed bookings and managing reservation changes.</li>
+                                                <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Managed the company's social media and content calendars, driving community engagement.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Centre node -->
+                                    <div class="col-lg-2 d-none d-lg-flex justify-content-center order-lg-2">
+                                        <div style="width: 52px; height: 52px; background: #93F203; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #0D0D0D; box-shadow: 0 0 0 6px rgba(147,242,3,0.15); z-index: 1; position: relative;">01</div>
+                                    </div>
+                                    <div class="col-lg-5 order-1 order-lg-3"></div>
                                 </div>
-                            </div>
-                            <div class="work-positions-items">
-                                <span class="year">2025</span>
-                                <h3 class="title">
-                                   Cinematic Craft
-                                </h3>
-                                <div class="content">
-                                    <h4 class="title-2">
-                                       Social Media &amp; Ads Manager — Uyo, Nigeria
-                                    </h4>
-                                    <ul>
-                                        <li>
-                                            • Managed Meta ad campaigns and organic social content to drive brand visibility and lead generation.
-                                        </li>
-                                        <li>
-                                            • Increased reach and qualified engagement by testing new audiences, creatives, and content strategies.
-                                        </li>
-                                    </ul>
+
+                                <!-- Entry 2 -->
+                                <div class="row align-items-center mb-5 pb-2 wow fadeInUp" data-wow-delay=".2s" style="position: relative;">
+                                    <div class="col-lg-5 order-2 order-lg-1"></div>
+                                    <!-- Centre node -->
+                                    <div class="col-lg-2 d-none d-lg-flex justify-content-center order-lg-2">
+                                        <div style="width: 52px; height: 52px; background: #0D0D0D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #93F203; box-shadow: 0 0 0 6px rgba(13,13,13,0.08); z-index: 1; position: relative;">02</div>
+                                    </div>
+                                    <div class="col-lg-5 ps-lg-5 order-1 order-lg-3">
+                                        <div style="background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); border: 1px solid #eee;">
+                                            <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #93F203;">2025</span>
+                                            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0D0D0D; margin: 10px 0 6px;">Genova Transact</h3>
+                                            <p style="font-size: 0.9rem; font-weight: 600; color: #666; margin-bottom: 16px;">Head of Marketing — Lagos, Nigeria</p>
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li style="display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Led social media and overall digital marketing strategy, planning and executing growth-focused campaigns.</li>
+                                                <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Increased audience engagement and brand awareness through proactive community interaction and content testing.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="work-positions-items">
-                                <span class="year">2025</span>
-                                <h3 class="title">
-                                   Mita School
-                                </h3>
-                                <div class="content">
-                                    <h4 class="title-2">
-                                       Social Media &amp; Website Manager — Uyo, Nigeria
-                                    </h4>
-                                    <ul>
-                                        <li>
-                                            • Managed the school's social media presence, developing campaigns that increased page visibility by 40%.
-                                        </li>
-                                        <li>
-                                            • Created an original educational content series that increased enrollment inquiries by 50%.
-                                        </li>
-                                    </ul>
+
+                                <!-- Entry 3 -->
+                                <div class="row align-items-center mb-5 pb-2 wow fadeInUp" data-wow-delay=".3s" style="position: relative;">
+                                    <div class="col-lg-5 text-lg-end pe-lg-5 order-2 order-lg-1">
+                                        <div style="background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); border: 1px solid #eee;">
+                                            <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #93F203;">2025</span>
+                                            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0D0D0D; margin: 10px 0 6px;">Cinematic Craft</h3>
+                                            <p style="font-size: 0.9rem; font-weight: 600; color: #666; margin-bottom: 16px;">Social Media &amp; Ads Manager — Uyo, Nigeria</p>
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li style="display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Managed Meta ad campaigns and organic social content to drive brand visibility and lead generation.</li>
+                                                <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Increased reach and qualified engagement by testing new audiences, creatives, and content strategies.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Centre node -->
+                                    <div class="col-lg-2 d-none d-lg-flex justify-content-center order-lg-2">
+                                        <div style="width: 52px; height: 52px; background: #93F203; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #0D0D0D; box-shadow: 0 0 0 6px rgba(147,242,3,0.15); z-index: 1; position: relative;">03</div>
+                                    </div>
+                                    <div class="col-lg-5 order-1 order-lg-3"></div>
                                 </div>
-                            </div>
+
+                                <!-- Entry 4 -->
+                                <div class="row align-items-center wow fadeInUp" data-wow-delay=".4s" style="position: relative;">
+                                    <div class="col-lg-5 order-2 order-lg-1"></div>
+                                    <!-- Centre node -->
+                                    <div class="col-lg-2 d-none d-lg-flex justify-content-center order-lg-2">
+                                        <div style="width: 52px; height: 52px; background: #0D0D0D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #93F203; box-shadow: 0 0 0 6px rgba(13,13,13,0.08); z-index: 1; position: relative;">04</div>
+                                    </div>
+                                    <div class="col-lg-5 ps-lg-5 order-1 order-lg-3">
+                                        <div style="background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); border: 1px solid #eee;">
+                                            <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #93F203;">2025</span>
+                                            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0D0D0D; margin: 10px 0 6px;">Mita School</h3>
+                                            <p style="font-size: 0.9rem; font-weight: 600; color: #666; margin-bottom: 16px;">Social Media &amp; Website Manager — Uyo, Nigeria</p>
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <li style="display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Managed the school's social media presence, developing campaigns that increased page visibility by 40%.</li>
+                                                <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #555; line-height: 1.6;"><span style="color: #93F203; font-weight: 800; flex-shrink: 0;">→</span> Created an original educational content series that increased enrollment inquiries by 50%.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- / timeline -->
                         </div>
                     </section>
 
                     <!-- Project Section Start -->
-                    <div class="project-section-inner section-padding fix">
-                        <div class="project-wrapper-inner">
+                    <!-- Project Section Start -->
+                    <div class="section-padding fix pb-0">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <h2 class="style-3 split-title">Featured Projects</h2>
+                            </div>
                             <div class="swiper project-slider">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="project-thumb-box-inner">
-                                            <img class="hover-img" src="assets/img/inner/about/project-01.jpg" alt="img">
-                                            <img class="hover-img" src="assets/img/inner/about/project-01.jpg" alt="img">
-                                            <div class="icon-text">
-                                                <img src="assets/img/inner/about/project-text-1.png" alt="img">
-                                            </div>
+                                    <div class="swiper-slide" style="opacity: 1 !important; transition: none;">
+                                        <div class="custom-project-card" style="text-align: center; background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;">
+                                            <img src="assets/img/projects/cinematic.jpeg" alt="Cinematic Craft" style="max-height: 400px; width: 100%; object-fit: contain; border-radius: 8px; margin-bottom: 25px; background: #fafafa;">
+                                            <h3 style="font-size: 24px; font-weight: 700; color: #111; margin-bottom: 8px;">Cinematic Craft</h3>
+                                            <p style="color: #ff5722; font-weight: 600; margin-bottom: 15px; font-size: 16px;">Social Media Management</p>
+                                            <a href="project" style="font-weight: 600; color: #111; text-decoration: underline;">View Details</a>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-thumb-box-inner">
-                                            <img class="hover-img" src="assets/img/inner/about/project-02.jpg" alt="img">
-                                            <img class="hover-img" src="assets/img/inner/about/project-02.jpg" alt="img">
-                                            <div class="icon-text">
-                                                <img src="assets/img/inner/about/project-text-1.png" alt="img">
-                                            </div>
+                                    <div class="swiper-slide" style="opacity: 1 !important; transition: none;">
+                                        <div class="custom-project-card" style="text-align: center; background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;">
+                                            <img src="assets/img/projects/genova.jpeg" alt="Genova Transact" style="max-height: 400px; width: 100%; object-fit: contain; border-radius: 8px; margin-bottom: 25px; background: #fafafa;">
+                                            <h3 style="font-size: 24px; font-weight: 700; color: #111; margin-bottom: 8px;">Genova Transact</h3>
+                                            <p style="color: #ff5722; font-weight: 600; margin-bottom: 15px; font-size: 16px;">Marketing Strategy</p>
+                                            <a href="project" style="font-weight: 600; color: #111; text-decoration: underline;">View Details</a>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-thumb-box-inner">
-                                            <img class="hover-img" src="assets/img/inner/about/project-02.jpg" alt="img">
-                                            <img class="hover-img" src="assets/img/inner/about/project-02.jpg" alt="img">
-                                            <div class="icon-text">
-                                                <img src="assets/img/inner/about/project-text-1.png" alt="img">
-                                            </div>
+                                    <div class="swiper-slide" style="opacity: 1 !important; transition: none;">
+                                        <div class="custom-project-card" style="text-align: center; background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;">
+                                            <img src="assets/img/projects/m25.jpeg" alt="M25 Travel" style="max-height: 400px; width: 100%; object-fit: contain; border-radius: 8px; margin-bottom: 25px; background: #fafafa;">
+                                            <h3 style="font-size: 24px; font-weight: 700; color: #111; margin-bottom: 8px;">M25 Travel</h3>
+                                            <p style="color: #ff5722; font-weight: 600; margin-bottom: 15px; font-size: 16px;">Customer Service & Socials</p>
+                                            <a href="project" style="font-weight: 600; color: #111; text-decoration: underline;">View Details</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="project" class="theme-btn">View Full Portfolio</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tech Stack Section Start -->
+                    <!-- Services Section Start -->
                     <section class="tech-stack-section-inner section-padding pt-0 fix">
                         <div class="container">
                             <div class="section-title text-center">
-                                <h2 class="style-3 split-title">My Toolkit & Platforms</h2>
+                                <h2 class="style-3 split-title">My Services</h2>
                                 <p class="mt-3 wow fadeInUp" data-wow-delay=".2s">
-                                    The platforms, tools, and skills I use daily to plan, create, <br> publish, and analyse social media campaigns.
+                                    Helping brands grow online through strategic content creation, targeted campaigns, and data-driven social media management.
                                 </p>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="tech-stack-items">
+                            <div class="row g-4">
+                                <!-- Service 1 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/meta.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-chess-knight" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">Meta Business Suite</h3>
+                                            <h3 class="title"><a href="service-details">Social Media Strategy</a></h3>
                                         </div>
-                                        <p>
-                                            Planning, scheduling, and analysing Facebook and Instagram campaigns — from organic posts to paid ad sets and audience targeting.
-                                        </p>
+                                        <p>Developing data-driven social media strategies to align with your brand goals and engage your target audience.</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="tech-stack-items">
+                                <!-- Service 2 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/canva.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-pen-nib" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">Canva & Adobe Express</h3>
+                                            <h3 class="title"><a href="service-details">Content Creation & Curation</a></h3>
                                         </div>
-                                        <p>
-                                            Creating scroll-stopping graphics, branded templates, short-form video, carousels and story assets optimised for every platform.
-                                        </p>
+                                        <p>Crafting high-quality, engaging visuals and copy that resonate with your audience and tell your brand's story.</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="tech-stack-items">
+                                <!-- Service 3 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/hootsuite.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-users" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">Hootsuite & Buffer</h3>
+                                            <h3 class="title"><a href="service-details">Community Management</a></h3>
                                         </div>
-                                        <p>
-                                            Scheduling and managing multi-channel content queues, monitoring engagement in real time, and generating performance reports.
-                                        </p>
+                                        <p>Fostering meaningful relationships and maintaining an active, engaged presence with your followers.</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="tech-stack-items">
+                                <!-- Service 4 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/googleanalytics.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-bullhorn" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">Google Analytics & Ads</h3>
+                                            <h3 class="title"><a href="service-details">Paid Advertising (Ads)</a></h3>
                                         </div>
-                                        <p>
-                                            Tracking campaign performance, audience behaviour and conversion funnels; running and optimising Google Search & Display ad campaigns.
-                                        </p>
+                                        <p>Running targeted ad campaigns across platforms to maximize ROI and reach new potential customers.</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="tech-stack-items">
+                                <!-- Service 5 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/tiktok.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-user-astronaut" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">TikTok & Instagram Reels</h3>
+                                            <h3 class="title"><a href="service-details">Influencer Marketing</a></h3>
                                         </div>
-                                        <p>
-                                            Ideating, filming, and editing short-form video content that drives organic reach, viral sharing, and follower growth on TikTok and Reels.
-                                        </p>
+                                        <p>Partnering with key influencers in your niche to boost brand awareness and build credibility.</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="tech-stack-items">
+                                <!-- Service 6 -->
+                                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="tech-stack-items" style="height: 100%;">
                                         <div class="tech-top">
                                             <div class="icon">
-                                                <img src="assets/img/inner/about/sproutsocial.svg" alt="img" width="50">
+                                                <i class="fa-solid fa-chart-line" style="font-size: 32px; color: #ff5722;"></i>
                                             </div>
-                                            <h3 class="title">Sprout Social & Insights</h3>
+                                            <h3 class="title"><a href="service-details">Analytics & Reporting</a></h3>
                                         </div>
-                                        <p>
-                                            Deep-diving into platform insights and Sprout Social dashboards to surface actionable data and shareable reports for clients.
-                                        </p>
+                                        <p>Tracking campaign performance and providing actionable insights to continually refine our approach.</p>
                                     </div>
                                 </div>
                             </div>
@@ -527,39 +742,11 @@
                                             </div>
                                         </div>
                                         
-                                        <form action="#" id="contact-form" class="contact-form-box">
-                                            <div class="row g-4 align-items-center justify-content-center">
-                                                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                                    <div class="form-clt">
-                                                        <span>Name</span>
-                                                        <input type="text" name="name" id="name" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                                    <div class="form-clt">
-                                                        <span>Email</span>
-                                                        <input type="text" name="email" id="email2" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 wow fadeInUp" data-wow-delay=".6s">
-                                                    <div class="form-clt">
-                                                        <span>Message</span>
-                                                        <textarea name="message" id="message" placeholder="Project details (optional)"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
-                                                    <div class="contact-button">
-                                                        <button type="submit" class="theme-btn">
-                                                            Send
-                                                        </button>
-                                                        <p>
-                                                            <a href="mailto:treasureemicah@gmail.com">treasureemicah@gmail.com
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                        <div class="contact-button mt-4 mb-4 wow fadeInUp" data-wow-delay=".6s">
+                                            <a href="mailto:treasureemicah@gmail.com" class="theme-btn">
+                                                Send
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -567,99 +754,49 @@
                     </section>
                     
                     <!-- Footer Section Start -->
-                    <footer class="footer-section fix">
-                        <div class="footer-shape">
-                            <img src="assets/img/home-1/footer-shape.png" alt="img">
-                        </div>
-                        <div class="container">
-                            <div class="footer-widget-wrapper">
-                                <div class="row justify-content-between">
-                                    <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-5 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="footer-widget-items">
-                                            <div class="widget-head">
-                                                <h3>Navigation</h3>
-                                            </div>
-                                            <ul class="list-area">
-                                                <li>
-                                                    <a href="about">
-                                                        <i class="icon-footer-arrow"></i>
-                                                        About
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="project">
-                                                        <i class="icon-footer-arrow"></i>
-                                                        Projects
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="service">
-                                                        <i class="icon-footer-arrow"></i>
-                                                        Services
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact">
-                                                        <i class="icon-footer-arrow"></i>
-                                                         Contact
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7  wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="footer-widget-items">
-                                            <div class="widget-head">
-                                                <h3>Follow me</h3>
-                                            </div>
-                                            <div class="social-list">
-                                                <div class="social-icon-area">
-                                                    <a href="https://www.linkedin.com/in/treasure-akpan-" class="social-icon">
-                                                        <i class="icon-linkedin"></i>
-                                                        LinkedIn
-                                                    </a>
-                                                    <a href="https://www.instagram.com/tee_akpan?igsh=bDNoeWt2NjU3bWth" class="social-icon">
-                                                        <i class="icon-instagram"></i>
-                                                        Instagram
-                                                    </a>
-                                                    <a href="https://www.facebook.com/share/1H1bacJCma/" class="social-icon">
-                                                        <i class="fab fa-facebook-f"></i>
-                                                        Facebook
-                                                    </a>
+                                        <footer class="footer-section pt-5 pb-4" style="background-color: #111; color: #fff;">
+                                            <div class="container">
+                                                <div class="row align-items-center mb-5 pb-4" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                                    <div class="col-lg-8">
+                                                        <h2 style="font-size: 3rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0;">Ready to elevate your social presence?</h2>
+                                                        <p style="font-size: 1.2rem; color: #aaa; margin-top: 15px; margin-bottom: 0;">Let's collaborate to create campaigns that convert.</p>
+                                                    </div>
+                                                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                                        <a href="mailto:treasureemicah@gmail.com" class="theme-btn">Get in Touch</a>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row mb-4">
+                                                    <div class="col-md-4 mb-4 mb-md-0">
+                                                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 20px;">Treasure Akpan</h3>
+                                                        <p style="color: #888; line-height: 1.6; margin-bottom: 0;">Social Media Strategist & Manager<br>Uyo, Nigeria</p>
+                                                    </div>
+                                                    <div class="col-md-4 mb-4 mb-md-0">
+                                                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 20px;">Quick Links</h3>
+                                                        <ul style="list-style: none; padding: 0; margin: 0;">                                                            <li style="margin-bottom: 10px;"><a href="project" style="color: #aaa; text-decoration: none; transition: color 0.3s;">Portfolio</a></li>
+                                                            <li style="margin-bottom: 10px;"><a href="service" style="color: #aaa; text-decoration: none; transition: color 0.3s;">Services</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 20px;">Connect</h3>
+                                                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 20px;">
+                                                            <li><a href="https://www.linkedin.com/in/treasure-akpan-" style="color: #aaa; font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-linkedin"></i></a></li>
+                                                            <li><a href="https://www.instagram.com/tee_akpan?igsh=bDNoeWt2NjU3bWth" style="color: #aaa; font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="https://www.facebook.com/share/1H1bacJCma/" style="color: #aaa; font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-facebook"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row align-items-center pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                                                    <div class="col-md-6 text-center text-md-start">
+                                                        <p style="color: #888; margin: 0; font-size: 0.9rem;">© 2026 Treasure Akpan. All rights reserved.</p>
+                                                    </div>
+                                                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                                                        <a href="#" style="color: #888; text-decoration: none; font-size: 0.9rem;" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top <i class="fas fa-arrow-up ms-1"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-4 col-xl-5 col-lg-6 wow fadeInUp" data-wow-delay=".7s">
-                                        <div class="footer-widget-items">
-                                            <div class="widget-head">
-                                                <h3>New Tips delivered to your inbox</h3>
-                                            </div>
-                                            <div class="form-area">
-                                                <form action="#">
-                                                    <input type="email" id="email12" placeholder="Your Email">
-                                                </form>
-                                                <div class="footer-button">
-                                                    <button type="submit" class="theme-btn">
-                                                        Subscribe
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <p class="mt-3 text-white">I will never share any of your personal <br> data. You can unsubscribe at any time.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer-bottom-wrapper">
-                                <p class="wow fadeInLeft" data-wow-delay=".5s">
-                                    © 2026 Treasure Akpan
-                                </p>
-                                <a href="about.html#" class="theme-btn wow fadeInRight" data-wow-delay=".5s">
-                                    Back to  Top
-                                </a>
-                            </div>
-                        </div>
-                    </footer>
+                                        </footer>
 
                 </div>
             </div>
